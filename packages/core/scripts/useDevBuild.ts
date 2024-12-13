@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, '../package.json');
 
 // 异步读取 package.json 文件
-async function readPackageJSON(file) {
+async function readPackageJSON(file: any) {
   try {
     const data = await fs.readFile(file, 'utf-8');
     return JSON.parse(data);
@@ -21,7 +21,7 @@ async function readPackageJSON(file) {
 }
 
 // 异步写入 package.json 文件
-async function writePackageJSON(file, data) {
+async function writePackageJSON(file: any, data: any) {
   try {
     const jsonData = JSON.stringify(data, null, 2);
     await fs.writeFile(file, jsonData, 'utf-8');
